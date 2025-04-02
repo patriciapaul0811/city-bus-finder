@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - City Bus Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background-color: #0d47a1;
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .top-bar {
+            background-color: #1565c0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar a {
+            color: white;
+            margin: 0 5px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            color: #0d47a1;
+        }
+        
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-box {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        .premium-features {
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 40px;
+            border-left: 4px solid #0d47a1;
+        }
+        
+        .button {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .button:hover {
+            background-color: #0a3d82;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-bus"></i>
+            BusFinder
+        </a>
+        <div>
+            <a href="#" class="download"><i class="fas fa-download"></i> Download</a>
+            <a href="#"><i class="fas fa-key"></i> Free Version</a>
+        </div>
+    </div>
+    
+    <div class="nav">
+        <a href="#" onclick="window.location.href='front.html'">Home</a>
+        <a href="#" onclick="window.location.href='how_it.html'">How It Works</a>
+        <a href="#" onclick="window.location.href='feature.html'">Features</a>
+        <a href="#" onclick="window.location.href='about_us.html'">About Us</a>
+        <a href="#"  onclick="window.location.href='cf.html'">Contact Us</a> |
+        <a href="#"   onclick="window.location.href='cf.html'">FAQ</a>
+    </div>
+    
+    <div class="content">
+        <h1>City Bus Finder Features</h1>
+        <p>Discover all the powerful features that make City Bus Finder the best way to navigate public transportation in your city.</p>
+        
+        <div class="feature-grid">
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Real-time Tracking</h3>
+                <p>See the exact location of your bus in real-time on the map. Know precisely when it will arrive at your stop.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h3>Notifications</h3>
+                <p>Get timely alerts about delays, route changes, or when your bus is approaching your stop.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h3>Route Planning</h3>
+                <p>Find the most efficient routes between any two points in the city, including transfers and walking directions.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Safety Features</h3>
+                <p>Share your journey with family and friends. Access emergency contacts and safety information quickly.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Trip History</h3>
+                <p>View your past trips and quickly access frequently used routes for faster planning.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Schedule Viewer</h3>
+                <p>Browse complete timetables for all bus routes, even when you're offline.</p>
+            </div>
+        </div>
+        
+        <div class="premium-features">
+            <h2>Premium Features</h2>
+            <p>Upgrade to access these additional features:</p>
+            <ul>
+                <li><strong>Ad-free Experience:</strong> Enjoy the app without any advertisements</li>
+                <li><strong>Offline Maps:</strong> Download routes and schedules for use without internet connection</li>
+                <li><strong>Priority Notifications:</strong> Get alerts even faster with our priority system</li>
+                <li><strong>Alternate Routes:</strong> Access more route options including less crowded alternatives</li>
+                <li><strong>Monthly Reports:</strong> Receive insights about your commuting patterns and time saved</li>
+            </ul>
+            <a href="#" class="button">Upgrade Now</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 City Bus Finder. All rights reserved.</p>
+    </div>
+</body>
+</html>\

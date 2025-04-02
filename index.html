@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Bus Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>City Bus Finder</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="search-form">
+            <form id="busSearchForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startPoint">Start Point</label>
+                        <input type="text" id="startPoint" placeholder="Enter start location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="Enter destination" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="travelDate">Travel Date</label>
+                        <input type="date" id="travelDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="travelTime">Preferred Time</label>
+                        <input type="time" id="travelTime">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="searchButton">Search Buses</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="loading" id="loadingIndicator">
+            Searching for available buses...
+        </div>
+        
+        <div class="no-results" id="noResults">
+            No buses found for your selected route. Please try different locations or time.
+        </div>
+        
+        <div class="results" id="resultsContainer">
+            <div class="results-header">
+                <h2 id="routeTitle">Available Buses</h2>
+            </div>
+            <div class="bus-list" id="busList">
+                <!-- Bus items will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

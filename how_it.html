@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - City Bus Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background-color: #0d47a1;
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .top-bar {
+            background-color: #1565c0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar a {
+            color: white;
+            margin: 0 5px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            color: #0d47a1;
+        }
+        
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #0d47a1;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        .step {
+            display: flex;
+            margin: 20px 0;
+            align-items: center;
+        }
+        
+        .step-number {
+            background-color: #0d47a1;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-content h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .button {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .button:hover {
+            background-color: #0a3d82;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-bus"></i>
+            BusTracker
+        </a>
+        <div>
+            <a href="#" class="download"><i class="fas fa-download"></i> Download</a>
+            <a href="#"><i class="fas fa-key"></i> Free Version</a>
+        </div>
+    </div>
+    
+    <div class="nav">
+        <a href="#" onclick="window.location.href='front.html'">Home</a>
+        <a href="#" onclick="window.location.href='how_it.html'">How It Works</a>
+        <a href="#" onclick="window.location.href='feature.html'">Features</a>
+        <a href="#" onclick="window.location.href='about_us.html'">About Us</a>
+        <a href="#"  onclick="window.location.href='cf.html'">Contact Us</a> |
+        <a href="#"   onclick="window.location.href='cf.html'">FAQ</a>
+    </div>
+    
+    <div class="content">
+        <h1>How City Bus Finder Works</h1>
+        
+        <div class="section">
+            <h2>Simple Steps to Find Your Bus</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Enter Your Start and Destination</h3>
+                    <p>Simply enter your starting location and destination in the search form. Our system will automatically detect nearby bus stops.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Choose Your Travel Date and Time</h3>
+                    <p>Select when you want to travel. This helps us find the most relevant bus routes that are operating at your preferred time.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>View Available Routes</h3>
+                    <p>We'll show you all available bus routes, including departure times, estimated arrival times, and any transfers needed.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Track Your Bus in Real-Time</h3>
+                    <p>On the day of travel, use our real-time tracking feature to see exactly where your bus is and when it will arrive at your stop.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Technology Behind City Bus Finder</h2>
+            <p>City Bus Finder uses advanced GPS technology to track buses in real-time. Our system connects with local transit authorities to provide accurate and up-to-date information about bus locations, routes, and schedules.</p>
+            
+            <p>Key technologies that power our service:</p>
+            <ul>
+                <li><strong>GPS Tracking:</strong> Real-time location data from buses</li>
+                <li><strong>Predictive Algorithms:</strong> Estimates arrival times based on current traffic conditions</li>
+                <li><strong>Route Optimization:</strong> Finds the most efficient routes for your journey</li>
+                <li><strong>Push Notifications:</strong> Alerts you about delays, route changes, or when your bus is approaching</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Data Privacy and Security</h2>
+            <p>We take your privacy seriously. Your location data is only used to provide you with accurate bus information and is never shared with third parties for marketing purposes. All data is encrypted and stored securely.</p>
+        </div>
+        
+        <a href="index.html" class="button">Try It Now</a>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 City Bus Finder. All rights reserved.</p>
+    </div>
+</body>
+</html>

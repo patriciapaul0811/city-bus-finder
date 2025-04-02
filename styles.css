@@ -1,0 +1,207 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.search-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+.results {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 30px;
+    display: none;
+}
+
+.results-header {
+    background-color: #f1f5f9;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.results-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.bus-list {
+    padding: 0;
+}
+
+.bus-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.bus-item:hover {
+    background-color: #f9f9f9;
+}
+
+.bus-item:last-child {
+    border-bottom: none;
+}
+
+.bus-icon {
+    flex: 0 0 60px;
+    height: 60px;
+    background-color: #0056b3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.bus-details {
+    flex: 1;
+}
+
+.bus-name {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+.bus-info {
+    display: flex;
+    gap: 20px;
+    color: #666;
+}
+
+.bus-info div {
+    display: flex;
+    align-items: center;
+}
+
+.bus-info i {
+    margin-right: 5px;
+}
+
+.bus-actions {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.select-btn {
+    background-color: #28a745;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.select-btn:hover {
+    background-color: #218838;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.no-results {
+    padding: 30px;
+    text-align: center;
+    color: #666;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bus-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .bus-icon {
+        margin-bottom: 10px;
+    }
+    
+    .bus-actions {
+        margin-top: 15px;
+        align-self: flex-end;
+    }
+}

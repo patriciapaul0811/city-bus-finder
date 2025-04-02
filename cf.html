@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Bus Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .top-bar {
+            background-color: #1565c0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar a {
+            color: white;
+            margin: 0 5px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            color: #0d47a1;
+        }
+        
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            margin: 10vh auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .close-button:hover {
+            color: #000;
+        }
+        
+        /* Contact Form Styles */
+        .contact-form {
+            margin-top: 30px;
+        }
+        
+        .form-row {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            margin-right: 15px;
+        }
+        
+        .form-group:last-child {
+            margin-right: 0;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background-color: #0d47a1;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .submit-button:hover {
+            background-color: #0a3d82;
+        }
+        
+        /* FAQ Styles */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #0d47a1;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-weight: bold;
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+        }
+        
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .form-group {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        /* Navigation for demo purposes */
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-bus"></i>
+            BusFinder
+        </a>
+        <div>
+            <a href="#" class="download"><i class="fas fa-download"></i> Download</a>
+            <a href="#"><i class="fas fa-key"></i> Free Version</a>
+        </div>
+    </div>
+    <!-- Simple navigation for demo purposes -->
+    <div class="nav">
+        <a href="#" onclick="window.location.href='front.html'">Home</a>
+        <a href="#" onclick="window.location.href='how_it.html'">How It Works</a>
+        <a href="#" onclick="window.location.href='feature.html'">Features</a>
+        <a href="#" onclick="window.location.href='about_us.html'">About Us</a>
+        <a href="#" id="contact-link">Contact Us</a>
+        <a href="#" id="faq-link">FAQ</a>
+    </div>
+    
+    <!-- Contact Us Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-contact">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback about City Bus Finder? We'd love to hear from you!</p>
+            
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" class="form-control">
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            
+            <div style="margin-top: 30px;">
+                <h3>Other Ways to Reach Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@citybusfinderapp.com</p>
+                <p><i class="fas fa-phone"></i> Phone: (555) 123-4567</p>
+                <p><i class="fas fa-building"></i> Address: 123 Transit Street, Cityville, CV 12345</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-faq">&times;</span>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How accurate is the real-time tracking?</div>
+                <div class="faq-answer">
+                    Our real-time tracking is typically accurate within 30-60 seconds. We receive direct GPS data from transit authorities when available, and use predictive algorithms to estimate arrival times based on current traffic conditions and historical data. The accuracy may vary depending on your city's transit system and infrastructure.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is City Bus Finder available in my city?</div>
+                <div class="faq-answer">
+                    City Bus Finder is currently available in over 25 major cities worldwide. We're constantly expanding our coverage. To check if your city is supported, download the app and allow location services, or contact our support team for the most up-to-date information.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is the app free to use?</div>
+                <div class="faq-answer">
+                    Yes, the basic version of City Bus Finder is completely free to use. We also offer a premium subscription that removes ads and provides additional features like offline maps, priority notifications, and monthly commute reports.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I report a problem with the app?</div>
+                <div class="faq-answer">
+                    You can report any issues through the app's "Help & Feedback" section in the settings menu, or by contacting our support team directly at support@citybusfinderapp.com. Please include details about your device, operating system, and a description of the problem you're experiencing.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Does the app work offline?</div>
+                <div class="faq-answer">
+                    The free version requires an internet connection to display real-time information. Premium users can download routes and schedules for offline use, though real-time tracking will still require an internet connection.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I save my frequent routes?</div>
+                <div class="faq-answer">
+                    After searching for a route, tap the star icon to save it to your favorites. You can access your saved routes from the main menu under "My Routes." The app will also automatically remember your recent searches.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I use City Bus Finder for other public transportation like trains and subways?</div>
+                <div class="faq-answer">
+                    Yes, in many cities we support multiple modes of public transportation including buses, trains, subways, trams, and ferries. The available transportation types depend on your specific location and the local transit system's integration with our platform.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I upgrade to the premium version?</div>
+                <div class="faq-answer">
+                    You can upgrade to premium directly within the app. Go to "Settings" > "Premium Subscription" and follow the prompts to complete your purchase. We offer monthly, quarterly, and annual subscription options.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Get modal elements
+        const contactModal = document.getElementById("contact-modal");
+        const faqModal = document.getElementById("faq-modal");
+        
+        // Get button elements that open the modals
+        const contactLink = document.getElementById("contact-link");
+        const faqLink = document.getElementById("faq-link");
+        
+        // Get close button elements
+        const closeContact = document.getElementById("close-contact");
+        const closeFaq = document.getElementById("close-faq");
+        
+        // When the user clicks the button, open the modal
+        contactLink.onclick = function(e) {
+            e.preventDefault();
+            contactModal.style.display = "block";
+        }
+        
+        faqLink.onclick = function(e) {
+            e.preventDefault();
+            faqModal.style.display = "block";
+        }
+        
+        // When the user clicks the close button, close the modal
+        closeContact.onclick = function() {
+            contactModal.style.display = "none";
+        }
+        
+        closeFaq.onclick = function() {
+            faqModal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal content, close it
+        window.onclick = function(event) {
+            if (event.target == contactModal) {
+                contactModal.style.display = "none";
+            }
+            if (event.target == faqModal) {
+                faqModal.style.display = "none";
+            }
+        }
+        
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // Toggle current question
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                if (question.classList.contains('active')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+            });
+        });
+        
+        // Handle contact form submission
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+                contactModal.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>
