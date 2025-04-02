@@ -1,0 +1,2 @@
+use('cityBusFinder');
+db.myCollection.find({});
